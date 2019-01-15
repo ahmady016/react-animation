@@ -4,7 +4,6 @@ import styled from "styled-components";
 const box = posed.div( ({ config }) => config );
 
 const Box = styled(box)`
-  position: relative;
   ${ props => `
     width: ${props.size}px;
     height: ${props.size}px;

@@ -3,8 +3,16 @@
   justify-content: space-between;
   align-items: center;
 }
+.boxs {
+  position: relative;
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .list {
-  width: 15rem;
+  flex-basis: 25%;
   padding: 1rem;
   background-color: #2e2f36;
   position: relative;

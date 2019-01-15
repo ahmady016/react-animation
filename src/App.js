@@ -5,18 +5,18 @@ import './app.css';
 
 const topBottom = {
   top: {
-    y: 20,
+    y: 0,
     scale: 1,
     backgroundColor: "#428cb2"
   },
   bottom: {
-    y: 360,
+    y: 200,
     scale: 2,
     backgroundColor: "#396e94"
   }
 }
 
-const pulse = {
+const onOff = {
   off: {
     opacity: 0.5,
     scale: 1
@@ -56,7 +56,7 @@ const itemConfig = {
   }
 };
 
-const items = [
+const _items = [
   { id: 1, text: "Javascript" },
   { id: 2, text: "Programming" },
   { id: 3, text: "React" },
@@ -68,13 +68,8 @@ class App extends Component {
   state = {
     pos: "top",
     pulse: "off",
-    items: [
-      { id: 1, text: "Javascript" },
-      { id: 2, text: "Programming" },
-      { id: 3, text: "React" },
-      { id: 4, text: "PopMotion" },
-      { id: 5, text: "Animations" }
-    ]
+    list: 'exit',
+    items: [..._items]
   };
   componentDidMount() {
     this.timer = setInterval(
@@ -92,28 +87,23 @@ class App extends Component {
     clearInterval(this.timer);
   }
   render() {
+    const { pos, pulse, list, items } = this.state;
     return (
       <div className="container">
         <List
-          items={items}
-          pose={this.state.list}
+          items={_items}
+          pose={list}
           listConfig={listConfig}
           itemConfig={itemConfig}
           listClasses="list"
           itemClasses="list-item"
         />
-        <div>
-          <Box size={50} pose={this.state.pos} config={topBottom} />
-          <Box
-            size={100}
-            top={50}
-            backColor="#874228"
-            pose={this.state.pulse}
-            config={pulse}
-          />
+        <div className="boxs">
+          <Box size={50} pose={pos} config={topBottom} />
+          <Box size={100} pose={pulse} config={onOff}  backColor="#874228" />
         </div>
         <List
-          items={this.state.items}
+          items={items}
           itemConfig={itemConfig}
           listClasses="list"
           itemClasses="list-item"
