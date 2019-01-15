@@ -4,12 +4,13 @@ import styled from "styled-components";
 const box = posed.div( ({ config }) => config );
 
 const Box = styled(box)`
-  position: absolute;
+  position: relative;
   ${ props => `
-    height: ${props.size}px;
     width: ${props.size}px;
-    top: ${props.top || 0}px;
-    left: calc(${props.offset} - ${props.size / 2}px);
+    height: ${props.size}px;
+    top: ${props.top || 0 }px;
+    left: ${props.offset ? `calc(${props.offset} - ${props.size / 2}px)` : '0'} ;
+    background-color: ${props.backColor || 'none' };
   `}
 `;
 

@@ -1,7 +1,18 @@
 .container {
-  width: 80vw;
-  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-div {
-  background-color: #874228;
+.list {
+  width: 15rem;
+  padding: 1rem;
+  background-color: #2e2f36;
+  position: relative;
+}
+.list-item {
+  list-style-type: none;
+  min-height: 1rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #381414;
 }
