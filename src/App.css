@@ -12,10 +12,10 @@
   align-items: center;
 }
 .list {
-  flex-basis: 25%;
-  padding: 1rem;
-  background-color: #2e2f36;
   position: relative;
+  flex-basis: 25%;
+  padding: 1rem !important;
+  background-color: #2e2f36;
 }
 .list-item {
   list-style-type: none;
