@@ -5,8 +5,8 @@ import './app.css';
 
 const App = props => (
   <div className="container">
-    <BoxAnimation />
     <ListAnimation />
+    <BoxAnimation />
   </div>
 );
 
