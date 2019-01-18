@@ -1,9 +1,9 @@
-.container {
+.routes {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.boxs {
+.boxes {
   position: relative;
   flex-basis: 40%;
   display: flex;

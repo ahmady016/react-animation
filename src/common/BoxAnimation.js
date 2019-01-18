@@ -51,7 +51,7 @@ class BoxAnimation extends Component {
   render() {
     const { pos, pulse } = this.state;
     return (
-      <div className="boxs">
+      <div className="boxes">
         <Box size={50} pose={pos} config={topBottom} />
         <Box size={100} pose={pulse} config={onOff}  backColor="#874228" />
       </div>
