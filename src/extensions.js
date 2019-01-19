@@ -104,7 +104,7 @@ export default () => {
       return result.length ? result.join(", ") + " and " + lastUnit : lastUnit;
     }
   };
-  // add or substract date units [year - month - week - day - hour - minute - second]
+  // add or subtract date units [year - month - week - day - hour - minute - second]
   Date.prototype.add = function(value = 1, unit = 'day') {
     // datetime units represented by milliseconds [used to apply changes]
     const units = {
@@ -127,7 +127,7 @@ export default () => {
       return 'must provide comparison operator and/or date value';
     switch(op) {
       case '==':
-        return this == d1;
+        return this === d1;
       case '>=':
         return this >= d1;
       case '<=':
@@ -205,6 +205,8 @@ export default () => {
         month = this.getMonth() + 1;
         month = (month > 9 ? "" : "0") + month;
         return [this.getFullYear(), month, day].join(separator);
+      default:
+        return this.toLocaleString();
     }
   };
   // randomize sort an array
@@ -232,7 +234,7 @@ export default () => {
       return this;
     this.sort(() => Math.random() - 0.5);
   };
-  // clean an array [remove null or undifined or empty string or empty object]
+  // clean an array [remove null or undefined or empty string or empty object]
   Array.prototype.clean = function() {
     return this.filter( item => {
       if (typeof item === 'object')
@@ -343,7 +345,7 @@ export default () => {
             return obj;
           }, {});
   };
-  // convert Bascal/camel case to Upper Case with Underscore in between words
+  // convert Pascal/camel case to Upper Case with Underscore in between words
   String.prototype.toUpperWithUnderscore = function() {
     return (
       this.split('')

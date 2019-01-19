@@ -1,6 +1,7 @@
 import React from 'react';
 import posed, { PoseGroup } from 'react-pose';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import shortid from 'shortid';
 import Navbar from './common/Navbar';
 import Home from './pages/Home';
 import Animation from './pages/Animation'
@@ -37,7 +38,7 @@ const App = ({ location }) => {
       <Navbar links={links} />
       <div className="container">
         <PoseGroup>
-          <Routes key={location.key} className="routes">
+          <Routes key={shortid.generate()} className="routes">
             <Switch location={location}>
               <Route path='/home' component={Home} />
               <Route path='/animation' component={Animation} />
